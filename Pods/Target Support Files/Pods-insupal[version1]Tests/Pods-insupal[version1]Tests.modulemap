@@ -1,0 +1,6 @@
+framework module Pods_insupal_version1_Tests {
+  umbrella header "Pods-insupal[version1]Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
