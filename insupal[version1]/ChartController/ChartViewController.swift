@@ -137,7 +137,7 @@ class ChartViewController: UIViewController,ChartViewDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.dateFormat = "dd hh:mm"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
+        // dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
         
         chtChart.xAxis.valueFormatter = DateValueFormatter(formatter: dateFormatter)
         
