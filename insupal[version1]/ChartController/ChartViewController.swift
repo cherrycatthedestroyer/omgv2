@@ -13,6 +13,18 @@ import FirebaseAuth
 import Foundation
 
 
+class DateValueFormatter: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return formatter.string(from: Date(timeIntervalSinceReferenceDate: value))
+    }
+    
+    let formatter: DateFormatter
+    
+    init(formatter: DateFormatter) {
+        self.formatter = formatter
+    }
+}
+
 class ChartViewController: UIViewController,ChartViewDelegate {
     
     @IBOutlet weak var chtChart: LineChartView!
@@ -38,8 +50,6 @@ class ChartViewController: UIViewController,ChartViewDelegate {
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
-        axisFormatDelegate = self
-
         read()
         updateGraph()
         
@@ -91,19 +101,7 @@ class ChartViewController: UIViewController,ChartViewDelegate {
     
     // updating the graph viewer with the new data entries
     func updateGraph(){
-        // dates are in date_data array
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM HH:mm"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
         
-        var miniDate : Double = 0.0
-        for i in 0..<date_data.count {
-            let date_time = dateFormatter.date(from: date_data[i])!
-            let timeInSeconds = date_time.timeIntervalSince1970
-            if i == 0 {
-                miniDate  = timeInSeconds
-            }
-        }
         
         
         
@@ -134,6 +132,15 @@ class ChartViewController: UIViewController,ChartViewDelegate {
         dataSets.append(bloodGlucose)
         
         let data : LineChartData = LineChartData(dataSets: dataSets)
+        
+        // dates are in date_data array
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd hh:mm"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
+        
+        chtChart.xAxis.valueFormatter = DateValueFormatter(formatter: dateFormatter)
+        
         
         self.chtChart.data = data
         
