@@ -13,7 +13,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="insupal_version1_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="MenuViewController" customModule="insupal_version1_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lo/med/hi" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-KQ-g1v">
                                 <rect key="frame" x="93" y="294" width="189" height="30"/>
@@ -933,7 +933,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logInButton:" destination="cUT-VR-rlE" eventType="touchUpInside" id="AFF-I3-frk"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="Home" id="WNY-k0-TyK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -972,7 +971,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="gpT-9W-Thv"/>
         <segue reference="bUZ-zS-Dav"/>
-        <segue reference="eqh-Ar-l7h"/>
+        <segue reference="zQX-bo-w2v"/>
         <segue reference="XwU-Vc-KVJ"/>
     </inferredMetricsTieBreakers>
 </document>
