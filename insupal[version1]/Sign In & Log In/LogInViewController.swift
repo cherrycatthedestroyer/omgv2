@@ -17,15 +17,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
     
-    // Actions
+    // Actions - when the login button is pressed
     @IBAction func logInButton(_ sender: UIButton) {
         handleSignIn()
-        let user = Auth.auth().currentUser
-        if ((user) != nil) {
-            performSegue(withIdentifier: "Home", sender: self)
-        } else {
-            // no user is signed in
-        }
     }
     
     override func viewDidLoad() {
@@ -47,6 +41,7 @@ class LogInViewController: UIViewController {
         guard let email = emailField.text else {return}
         guard let pass = passwordField.text else {return}
         
+        // authenticate log in information
         Auth.auth().signIn(withEmail: email, password: pass) {user, error in
             if error == nil && user != nil {
                 print("Successfully logged in!")
