@@ -50,8 +50,13 @@ class LogInViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pass) {user, error in
             if error == nil && user != nil {
                 print("Successfully logged in!")
+                // switches the view controller on a successful log in
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as UIViewController
+                self.present(viewController, animated: false, completion: nil)
             } else {
-                self.errorMessage.text = "Error logging in: \(error!.localizedDescription)"
+                // prints an error message if the log in was not successful
+                self.errorMessage.text = "\(error!.localizedDescription)"
+                print("Error logging in: \(error!.localizedDescription)")
             }
         }
     }
