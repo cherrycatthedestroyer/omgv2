@@ -19,6 +19,17 @@ class ChartViewController: UIViewController,ChartViewDelegate{
     var systolic_data : [Double] = [] // systolic holder
     var bg_data : [Double] = [] // glucose holder
     
+    //high contrast mode
+    @IBAction func clrSwitch(_ sender: UISwitch) {
+        if  (sender.isOn == true){
+            view.backgroundColor = .black
+        }
+        else{
+            view.backgroundColor = #colorLiteral(red: 1, green: 0.5490196078, blue: 0.5803921569, alpha: 1)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {

@@ -24,6 +24,8 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     // event picker options
     var events = ["Before Meal", "After Meal", "Waking Up", "Just BP"]
+    // food sugar level picker options
+    var foodSgrLvl = ["Low","Medium","High"]
     
     //
     var picker = UIPickerView()
@@ -38,6 +40,7 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var systolicTextField: UITextField!
     //@IBOutlet weak var diastolicTextField: UITextField!
     @IBOutlet weak var eventTextField: UITextField!
+    @IBOutlet weak var foodSgrTextField: UITextField!
     
     // Status message
     @IBOutlet weak var testMessage: UILabel!
@@ -57,6 +60,16 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         //recognize.recordAndRecognize()
         //sender.setImage(buttonBloodGlucoseOffImage, for: .normal)
     }
+    //High contrast mode
+    @IBAction func clrBtn(_ sender: UISwitch) {
+        if  (sender.isOn == true){
+            view.backgroundColor = .black
+        }
+        else{
+            view.backgroundColor = #colorLiteral(red: 1, green: 0.5490196078, blue: 0.5803921569, alpha: 1)
+        }
+    }
+    
     
     // VoiceActivation
     //var recognize: Recognize!
@@ -69,27 +82,27 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //if currentTextFieldTag == 10 {
-            //return types.count
-        //} else {
+        if currentTextFieldTag == 10 {
+            return foodSgrLvl.count
+        } else {
             return events.count
-        //}
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //if currentTextFieldTag == 10 {
-        //    return types[row]
-        //} else {
+        if currentTextFieldTag == 10 {
+            return foodSgrLvl[row]
+        } else {
             return events[row]
-        //}
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //if currentTextFieldTag == 10 {
-        //    insulinTypeTextField.text = types[row]
-        //} else {
+        if currentTextFieldTag == 10 {
+            foodSgrTextField.text = foodSgrLvl[row]
+        } else {
             eventTextField.text = events[row]
-        //}
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -135,13 +148,13 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         picker.delegate = self
         picker.dataSource = self
         
-        //insulinTypeTextField.tag = 10
+        foodSgrTextField.tag = 10
         eventTextField.tag = 20
         
-        //insulinTypeTextField.delegate = self
+        foodSgrTextField.delegate = self
         eventTextField.delegate = self
         
-        //insulinTypeTextField.inputView = picker
+        foodSgrTextField.inputView = picker
         eventTextField.inputView = picker
     }
     
@@ -170,6 +183,7 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         let doubleBloodGlucose = Double(bloodGlucoseTextField.text!)
         //let doubleInsulin = Double(insulinTextField.text!)
         let stringDate = String(dateTextField.text!)
+        let foodSgrLvlIn = String(foodSgrTextField.text!)
         //let insulinType = String(insulinTypeTextField.text!)
         let systolicBP = Double(systolicTextField.text!)
         //let diastolicBP = Double(diastolicTextField.text!)
@@ -183,6 +197,7 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             //"insulin": doubleInsulin as Any,
             //"insulinType": insulinType,
             "systolicBP": systolicBP as Any,
+            "foodSgrLvl": foodSgrLvlIn as Any,
             //"diastolicBP": diastolicBP as Any,
             "eventType": eventType
         ]

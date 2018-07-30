@@ -17,6 +17,10 @@
 		BB6437A720FD779200E72090 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6437A620FD779200E72090 /* SignUpViewController.swift */; };
 		BB6437A920FD779F00E72090 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6437A820FD779F00E72090 /* LogInViewController.swift */; };
 		BB6F10A120EAF35C0006C5B4 /* logViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F10A020EAF35C0006C5B4 /* logViewController.swift */; };
+		C81A1FDB210E732B00932F58 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A1FDA210E732B00932F58 /* ViewControllerTableViewCell.swift */; };
+		C81A1FDD210E784700932F58 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A1FDC210E784700932F58 /* DiaryModel.swift */; };
+		C81A1FE5210E7EC600932F58 /* FoodDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A1FE4210E7EC600932F58 /* FoodDiaryViewController.swift */; };
+		C81A1FE7210E9A7E00932F58 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81A1FE6210E9A7E00932F58 /* MenuViewController.swift */; };
 		C830BC7C20E82C54008B322C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C830BC7B20E82C54008B322C /* AppDelegate.swift */; };
 		C830BC7E20E82C54008B322C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C830BC7D20E82C54008B322C /* ViewController.swift */; };
 		C830BC8120E82C54008B322C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C830BC7F20E82C54008B322C /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		BB6437A620FD779200E72090 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BB6437A820FD779F00E72090 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		BB6F10A020EAF35C0006C5B4 /* logViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logViewController.swift; sourceTree = "<group>"; };
+		C81A1FDA210E732B00932F58 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		C81A1FDC210E784700932F58 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
+		C81A1FE4210E7EC600932F58 /* FoodDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodDiaryViewController.swift; path = ../FoodDiaryViewController.swift; sourceTree = "<group>"; };
+		C81A1FE6210E9A7E00932F58 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C830BC7820E82C54008B322C /* insupal[version1].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "insupal[version1].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C830BC7B20E82C54008B322C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C830BC7D20E82C54008B322C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,8 +164,12 @@
 				5515A70020ECD8AD00A24080 /* Others */,
 				5515A6FF20ECD89B00A24080 /* ChartController */,
 				C830BC7D20E82C54008B322C /* ViewController.swift */,
+				C81A1FE4210E7EC600932F58 /* FoodDiaryViewController.swift */,
 				BB6F10A020EAF35C0006C5B4 /* logViewController.swift */,
 				C830BC7F20E82C54008B322C /* Main.storyboard */,
+				C81A1FE6210E9A7E00932F58 /* MenuViewController.swift */,
+				C81A1FDA210E732B00932F58 /* ViewControllerTableViewCell.swift */,
+				C81A1FDC210E784700932F58 /* DiaryModel.swift */,
 				C830BC8220E82C55008B322C /* Assets.xcassets */,
 				C86F9E2B20FEC04000E8848F /* Recognize.swift */,
 				C830BC8420E82C55008B322C /* LaunchScreen.storyboard */,
@@ -369,13 +381,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				557DA01820ED70990065DD91 /* GoalViewController.swift in Sources */,
+				C81A1FE7210E9A7E00932F58 /* MenuViewController.swift in Sources */,
 				C830BC7E20E82C54008B322C /* ViewController.swift in Sources */,
+				C81A1FE5210E7EC600932F58 /* FoodDiaryViewController.swift in Sources */,
+				C81A1FDB210E732B00932F58 /* ViewControllerTableViewCell.swift in Sources */,
 				557DA01720ED70990065DD91 /* GoalEditViewController.swift in Sources */,
 				5515A6FE20ECD87700A24080 /* ChartViewController.swift in Sources */,
 				BB6F10A120EAF35C0006C5B4 /* logViewController.swift in Sources */,
 				557DA01920ED70990065DD91 /* Goal.swift in Sources */,
 				C86F9E2C20FEC04000E8848F /* Recognize.swift in Sources */,
 				BB6437A720FD779200E72090 /* SignUpViewController.swift in Sources */,
+				C81A1FDD210E784700932F58 /* DiaryModel.swift in Sources */,
 				557DA01620ED70990065DD91 /* GoalTableViewCell.swift in Sources */,
 				BB6437A920FD779F00E72090 /* LogInViewController.swift in Sources */,
 				C830BC7C20E82C54008B322C /* AppDelegate.swift in Sources */,
