@@ -26,19 +26,18 @@ class Recognize
     //Microphone Usage Description
     public init(textField: UITextField )
     {
+        
         self.textField = textField
         
         requestAuth()
-        
-        
-        /*if(authorized != nil && authorized )
-         {
-         audioEngine.prepare()
-         
-         }else
-         {
-         print("Speech recognition not authorized")
-         }*/
+        if(authorized != nil && authorized )
+        {
+            audioEngine.prepare()
+            
+        }else
+        {
+            print("Speech recognition not authorized")
+        }
         
     }
     
@@ -50,17 +49,6 @@ class Recognize
             if(authStatus == SFSpeechRecognizerAuthorizationStatus.authorized){
                 self.authorized = true
                 print("This request was previously authorized")
-                
-                
-                if(self.audioEngine.isRunning)
-                {
-                    print("Audio engine is running")
-                    self.audioEngine.stop()
-                }else
-                {
-                    print("Audio engine is not running")
-                }
-                self.audioEngine.prepare()
                 //return true
             }else
             {
@@ -176,3 +164,17 @@ class Recognize
  
  return res
  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

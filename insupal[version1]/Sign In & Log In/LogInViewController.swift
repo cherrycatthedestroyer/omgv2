@@ -52,7 +52,7 @@ class LogInViewController: UIViewController {
                 print("Successfully logged in!")
                 // switches the view controller on a successful log in
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as UIViewController
-                self.present(viewController, animated: false, completion: nil)
+                self.present(viewController, animated: true, completion: nil)
             } else {
                 // prints an error message if the log in was not successful
                 self.errorMessage.text = "\(error!.localizedDescription)"

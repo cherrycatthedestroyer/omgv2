@@ -67,6 +67,16 @@
                                     <segue destination="4ZW-Id-jqv" kind="presentation" id="1gA-G4-K4V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-C7-TII">
+                                <rect key="frame" x="306" y="28" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D4p-mf-V6l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5490196078431373" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -726,7 +736,7 @@
         <!--View Controller-->
         <scene sceneID="m30-8b-JLM">
             <objects>
-                <viewController id="Fjq-Wv-Uy4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreen" id="Fjq-Wv-Uy4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdV-Ti-Ygy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MenuViewController: UIViewController{
     
+    // to handle user sign out
+    @IBAction func handleSignOut(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as UIViewController
+            self.present(viewController, animated: true, completion: nil)
+            print("Successfully logged out")
+        } catch let err {
+            print(err)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

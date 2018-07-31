@@ -56,8 +56,9 @@ class logViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     //Voice recording button
     @IBAction func buttonBloodGlucose(_ sender: UIButton) {
         sender.setImage(buttonBloodGlucoseOnImage, for: .normal)
-        bloodGlucoseTextField.text = "Speech/Recog not made yet"
-        //recognize.recordAndRecognize()
+        //bloodGlucoseTextField.text = "Speech/Recog not made yet"
+        let recognize = Recognize(textField: bloodGlucoseTextField)
+        recognize.recordAndRecognize()
         //sender.setImage(buttonBloodGlucoseOffImage, for: .normal)
     }
     //High contrast mode
